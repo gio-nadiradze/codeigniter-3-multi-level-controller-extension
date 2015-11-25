@@ -45,20 +45,23 @@ class MY_Router extends CI_Router {
             // @edit: Support multi-level sub-folders
             $dir = '';
             
-			do
+	    do
             {
                 if (strlen($dir) > 0)
                 {
                     $dir .= '/';
                 }
                 
-				$dir .= $segments[0];
+	        $dir .= $segments[0];
                 $segments = array_slice($segments, 1);
             } while (count($segments) > 0 && is_dir(APPPATH.'controllers/'.$dir.'/'.$segments[0]));
            
- 			// Set the directory and remove it from the segment array
+ 	    // Set the directory and remove it from the segment array
             $this->set_directory($dir);
             // @edit: END
+            
+            // Controller in CI 3 must be in uppercase
+            $segments[0] = ucfirst($segments[0]);
 
             // @edit: If no controller found, use 'default_controller' as defined in 'config/routes.php'
             if (count($segments) > 0 && ! file_exists(APPPATH.'controllers/'.$this->fetch_directory().$segments[0].EXT))
