@@ -9,7 +9,8 @@
  * @author    Damien K.
  * @copyright Copyright (c) 2010, Ollie Rattue
  * @license   http://www.opensource.org/licenses/mit-license.php
- * @link      https://github.com/ollierattue/codeigniter-multi-level-controller-extension
+ * @link      https://github.com/llobu/codeigniter-3-multi-level-controller-extension
+
  */
 
 class MY_Router extends CI_Router {
@@ -34,7 +35,7 @@ class MY_Router extends CI_Router {
         }
 
         // Does the requested controller exist in the root folder?
-        if (file_exists(APPPATH.'controllers/'.$segments[0].EXT))
+        if (file_exists(APPPATH.'controllers/'.ucfirst($segments[0]).EXT))
         {
             return $segments;
         }
