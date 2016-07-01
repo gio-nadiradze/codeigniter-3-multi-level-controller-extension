@@ -1,4 +1,4 @@
-Multi level controllers extension - Production ready - CI 3.0.3 compatible
+Multi level controllers extension - Production ready - CI 3.0.6 compatible
 ====================================================================
 
 An extension to the core router class to allow controllers to be in multi-level directories.
@@ -7,6 +7,8 @@ Notes
 -----
 
 This original extension was written by Damien K. but the code appeared to have no home. 
+
+20160701 Updated. Not needed to overrride: function set_directory($dir)
 
 Extra
 -----
