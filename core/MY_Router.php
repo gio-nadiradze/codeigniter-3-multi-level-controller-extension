@@ -128,19 +128,4 @@ class MY_Router extends CI_Router {
 
     // --------------------------------------------------------------------
 
-    /**
-     * OVERRIDE
-     *
-     * Set the directory name
-     *
-     * @access    public
-     * @param    string
-     * @return    void
-     */
-    function set_directory($dir)
-    {
-        $this->directory = str_replace(array('.'), '', $dir).'/'; // @edit: Preserve '/'
-    }
-
-    // --------------------------------------------------------------------
 }
