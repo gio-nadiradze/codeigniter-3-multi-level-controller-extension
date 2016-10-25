@@ -62,7 +62,10 @@ class MY_Router extends CI_Router {
             // @edit: END
             
             // Controller in CI 3 must be in uppercase
-            $segments[0] = ucfirst($segments[0]);
+            if (isset($segments[0]))
+	    {
+		$segments[0] = ucfirst($segments[0]);
+	    }
 
             // @edit: If no controller found, use 'default_controller' as defined in 'config/routes.php'
             if (count($segments) > 0 && ! file_exists(APPPATH.'controllers/'.$this->fetch_directory().$segments[0].EXT))
